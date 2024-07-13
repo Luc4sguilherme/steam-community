@@ -1,0 +1,128 @@
+{
+  "name": "@luc4sguilherme/steam-community",
+  "version": "1.0.0",
+  "description": "Provides an interface for interacting with the Steam Community website",
+  "license": "MIT",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luc4sguilherme/steam-community.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luc4sguilherme/steam-community/issues"
+  },
+  "homepage": "https://github.com/luc4sguilherme/steam-community#readme",
+  "files": [
+    "src",
+    "package.json",
+    "package-lock.json",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "@doctormckay/user-agents": "^1.0.0",
+    "async": "^2.6.3",
+    "cheerio": "0.22.0",
+    "image-size": "^0.8.2",
+    "request": "^2.88.0",
+    "steam-session": "^1.7.2",
+    "steam-totp": "^2.1.2",
+    "steamid": "^2.0.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.5",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-editorconfig": "^4.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-prettier": "^5.1.1",
+    "eslint-plugin-promise": "^6.4.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.1",
+    "semantic-release": "^22.0.12",
+    "@types/node": "^15.3.0",
+    "@types/request": "^2.48.5",
+    "@types/steamid": "^1.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "docs",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "./scripts/bundle.sh"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "archive.zip",
+              "label": "${nextRelease.gitTag}.zip",
+              "name": "steam-community-${nextRelease.gitTag}.zip"
+            }
+          ]
+        }
+      ]
+    ]
+  }
+}
