@@ -24,6 +24,14 @@ SteamCommunity.prototype.httpRequest = function (
     delete this._httpRequestConvenienceMethod;
   }
 
+  if ((options.method || 'GET').toUpperCase() != 'GET') {
+    options.headers = options.headers || {};
+    if (!options.headers.origin) {
+      const parsedUrl = URL.parse(options.url);
+      options.headers.origin = parsedUrl.protocol + '//' + parsedUrl.host;
+    }
+  }
+
   const requestID = ++this._httpRequestID;
   source = source || '';
 
