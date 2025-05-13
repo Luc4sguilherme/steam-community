@@ -75,11 +75,11 @@ function CEconItem(item, description, contextID) {
 
   if (this.appid == 730 && this.contextid == 2 && this.owner_descriptions) {
     const description = this.owner_descriptions.find(
-      d => d.value && d.value.indexOf('Tradable After ') == 0,
+      d => d.value && d.value.indexOf('Tradable/Marketable After ') == 0,
     );
     if (description) {
       const date = new Date(
-        description.value.substring(15).replace(/[,()]/g, ''),
+        description.value.substring(26).replace(/[,()]/g, ''),
       );
       if (date) {
         this.cache_expiration = date.toISOString();
