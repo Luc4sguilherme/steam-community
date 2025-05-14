@@ -25,7 +25,7 @@ function SteamCommunity(options) {
 
   const defaults = {
     jar: this._jar,
-    timeout: options.timeout || 50000,
+    timeout: options.timeout || 60000,
     gzip: true,
     headers: {
       'User-Agent': options.userAgent || chrome(),
