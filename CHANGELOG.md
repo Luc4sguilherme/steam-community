@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/luc4sguilherme/steam-community/compare/v1.1.1...v1.1.2) (2025-05-14)
+
+
+### Bug Fixes
+
+* increase default timeout ([34a095d](https://github.com/luc4sguilherme/steam-community/commit/34a095dbe59b87b66c2f2532e8fb353e499fd602))
+
 ## [1.1.1](https://github.com/luc4sguilherme/steam-community/compare/v1.1.0...v1.1.1) (2025-05-14)
 
 

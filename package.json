@@ -1,6 +1,6 @@
 {
   "name": "@luc4sguilherme/steam-community",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Provides an interface for interacting with the Steam Community website",
   "license": "MIT",
   "main": "src/index.js",
