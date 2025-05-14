@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/luc4sguilherme/steam-community/compare/v1.1.0...v1.1.1) (2025-05-14)
+
+
+### Bug Fixes
+
+* fix package URL ([1f2d135](https://github.com/luc4sguilherme/steam-community/commit/1f2d135d67effc3b857df5abfca143fc1c1dca36))
+
 # [1.1.0](https://github.com/luc4sguilherme/steam-community/compare/v1.0.0...v1.1.0) (2025-05-13)
 
 
