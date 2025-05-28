@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/luc4sguilherme/steam-community/compare/v1.1.2...v1.1.3) (2025-05-28)
+
+
+### Bug Fixes
+
+* fix corrupted Steam data possibly overwriting inventory item assetids ([f633548](https://github.com/luc4sguilherme/steam-community/commit/f63354806efc39636aa97718401c763213c2eda7))
+
 ## [1.1.2](https://github.com/luc4sguilherme/steam-community/compare/v1.1.1...v1.1.2) (2025-05-14)
 
 
